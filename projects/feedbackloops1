@@ -1,1 +1,55 @@
 <p> </p>
+<style>
+ .scroll-left {
+ height: 50px;	
+ overflow: hidden;
+ position: relative;
+background: white;
+color:  black;
+border: 0px white;
+}
+.scroll-left p {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */
+ transform:translateX(100%);
+ /* Apply animation to this element */
+ animation: scroll-left 15s linear infinite;
+}
+/* Move it (define the animation) */
+@keyframes scroll-left {
+ 0%   {
+ transform: translateX(100%); 		
+ }
+ 100% {
+ transform: translateX(-100%); 
+ }
+}
+@font-face {
+ font-family: customfont;
+ src=url (Cageroll-Cage.otf);
+}
+</style>
+
+
+<div class="scroll-left">
+<p>autumngreeenbean/resume/feedbackloops1.html</p>
+</div>
+ <a href="../index.html">< Take me back, please...</a>
+ <h1> Hello World! </h1>
+
+</p>
+
+
+<h2>October 15, 2022 - Analog Feedback Loops </h2>
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Vi5hxnebtVk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<br>
+<i>This features an analog feedback loop created with a VHS camcorder, OBS Studio, and a projector. 
+<br>
+    Footage was live-captured and exported as a looping video to project in the LaVerne Krause Gallery at the University of Oregon (Week 4 of Fall Term)</i>
