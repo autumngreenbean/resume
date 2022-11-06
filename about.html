@@ -1,6 +1,47 @@
 <!DOCTYPE html>
-<html lang="en">
+<style>
+ .scroll-left {
+ height: 50px;	
+ overflow: hidden;
+ position: relative;
+background: white;
+color:  black;
+border: 0px white;
+}
+.scroll-left p {
+ position: absolute;
+ width: 100%;
+ height: 100%;
+ margin: 0;
+ line-height: 50px;
+ text-align: center;
+ /* Starting position */
+ transform:translateX(100%);
+ /* Apply animation to this element */
+ animation: scroll-left 15s linear infinite;
+}
+  @keyframes scroll-left {
+ 0%   {
+ transform: translateX(100%); 		
+ }
+ 100% {
+ transform: translateX(-100%); 
+ }
+}
+@font-face {
+ font-family: customfont;
+ src=url (Cageroll-Cage.otf);
+}
+</style>
+
+<div class="scroll-left">
+<p>autumngreeenbean/resume/about.html </p>
+</div>
+
   <p>
     <h1> Hello World! </h1>
+<br>
+<i> My name is Autumn Green. Currently, I am pursuing an Art and Technology degree at the University of Oregon. My hobbies involve a variety of procedural-based practices. I hope to one day immerse myself in the world of game development.  </i>
+  
   </p>
 </html> 
