@@ -1,0 +1,81 @@
+
+
+@font-face {
+    font-family: "CustomFont";
+    src:url ('Cageroll-Cage.otf');
+    }
+
+body {
+    background-color: black;
+    color: white;
+  }
+  h1 {
+    color: white;
+    background-color:black;
+    font-family: 'CustomFont';
+    font-weight:normal;
+    font-style:normal;
+  }
+ 
+  p {
+    color: white;
+    background-color: black;
+  }
+
+  a:link {
+    color: green;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: pink;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: red;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  <!--SCROLL BAR-->
+
+  .scroll-left {
+    height: 50px;	
+    overflow: hidden;
+    position: relative;
+   background: black;
+   color:  white;
+   border: 0px black;
+   }
+   .scroll-left p {
+    background: black;
+   color:  rgb(255, 211, 211);
+    position: absolute;
+    width: 100%;
+    height: 1%;
+    margin: 0;
+    line-height: 50px;
+    text-align: center;
+    /* Starting position */
+    transform:translateX(100%);
+    /* Apply animation to this element */
+    animation: scroll-left 15s linear infinite;
+   }
+   /* Move it (define the animation) */
+   @keyframes scroll-left {
+    0%   {
+    transform: translateX(100%); 		
+    }
+    100% {
+    transform: translateX(-100%); 
+    }
+   }
