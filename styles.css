@@ -9,6 +9,10 @@ body {
     background-color: black;
     color: white;
   }
+  iframe {
+    display: block;
+    border-style:none;
+}
   h1 {
     color: white;
     background-color:black;
