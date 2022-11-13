@@ -1,19 +1,49 @@
-#container {
-  display: flex;
-  overflow-x: scroll;
-  
-  max-width: 50rem;
-  margin: 0 auto;
-}
-
-#container p {
-  font-family: sans-serif;
-  
-  border-radius: 8px;
-  background: #ff6961;
+html,body {
+  height: 100%;
+  background-color: black;
   color: white;
-  
-  padding: 2rem 3rem;
-  margin: 2rem 1rem;
+
+}
+.container {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
+.box-scroll {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 95%;
+  overflow: auto;
+  cursor: pointer;
+  /* Hiddem scroll bar */
+  scrollbar-width: none;  /* Firefox */
+  -ms-overflow-style: none;  /* IE and Edge */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.box-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  display: inline-block;
+  border: 1px solid gray;
+  border-radius: 0px;
+  background-color: white;
+}
+
+.ml {
+  margin-right: 10px;
+}
+
+img {
+  display: block;
+}
+
+p {
+  color: white;
+  background-color: black;
+  padding: 0 10px;
+}
