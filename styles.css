@@ -1,8 +1,20 @@
+#container {
+  display: flex;
+  overflow-x: scroll;
+  
+  max-width: 100rem;
+  max-height:50rem;
+  margin: 0 auto;
+}
 
-@font-face {
-    font-family: "CustomFont";
-    src:url ('Cageroll-Cage.otf');
-    }
+#container p {
+  font-family: sans-serif;
+  
+  border-radius: 8px;
+  background: #ff6961;
+  color: black;
+  
+}
 
 body {
     background-color: black;
@@ -164,7 +176,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: #fff;
+    background: black;
     border-radius: 0px;
   }
   
