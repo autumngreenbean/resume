@@ -1,4 +1,4 @@
-
+<html>
 <head>
     <link rel="stylesheet" href="../styles.css">
   </head>
@@ -11,34 +11,39 @@
   <a href="../index.html">< Take me back, please...</a>
   <br><br>
   <h1> Hello World! </h1>
-  <h2> VHS Stills </h2> <br>&nbsp&nbsp&nbsp&nbsp...Scroll...Scroll...! ....Scroll!! ></i>
-  <br>
-  <div class="app"> 
-    <ul class="hs full no-scrollbar">
-      <li class="item">  <img src="./data/skylar.jpg" alt="skylar.jpg"> </li>
-      <li class="item">  <img src="./data/hand1.jpg" alt="kira.jpg">    </li>
-      <li class="item">  <img src="./data/hand2.jpg" alt="kira.jpg">    </li>
-      <li class="item">  <img src="./data/kira.jpg" alt="kira.jpg">    </li>
-      <li class="item">  <img src="./data/sharkbass.jpg" alt="kira.jpg">    </li>
-      <li class="item">  <img src="./data/alex.jpg" alt="kira.jpg">    </li>
-      <li class="item">  <img src="./data/hand3.jpg" alt="kira.jpg">    </li>
-      <li class="item">  <img src="./data/alex2.jpg" alt="kira.jpg">    </li>
-    </ul>
-    </div>
+  <h2> VHS Stills </h2><br>
+  <div id = "container">
+    <li class="item">  <img src="./data/skylar.jpg" alt="skylar.jpg"> </li>
+    <li class="item">  <img src="./data/hand1.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./data/hand2.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./data/kira.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./data/sharkbass.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./data/alex.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./data/hand3.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./data/alex2.jpg" alt="kira.jpg">    </li>
   </div>
-  
   <br><br>
-  <div class="app"> 
-    <ul class="hs full no-scrollbar">
-      <li class="item">  <img src="./data/doopgroup.jpg" alt="skylar.jpg"> </li>
-      <li class="item">  <img src="./data/chris1.jpg" alt="kira.jpg">    </li>
-      <li class="item">  <img src="./data/chris2.jpg" alt="kira.jpg">    </li>
-      <li class="item">  <img src="./data/cottonbelt.jpg" alt="kira.jpg">    </li>
-      <li class="item">  <img src="./data/airtrumpets.jpg" alt="kira.jpg">    </li>
-      <li class="item">  <img src="./data/rainygarage.jpg" alt="kira.jpg">    </li>
-      <li class="item">  <img src="./data/leap.jpg" alt="kira.jpg">    </li>
-      <li class="item">  <img src="./data/glitched.jpg" alt="kira.jpg">    </li>
-  
-    </ul>
-    </div>
+  <div id = "container">
+    <li class="item">  <img src="./data/doopgroup.jpg" alt="skylar.jpg"> </li>
+    <li class="item">  <img src="./data/chris1.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./data/chris2.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./data/cottonbelt.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./data/airtrumpets.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./data/rainygarage.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./data/leap.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./data/glitched.jpg" alt="kira.jpg">    </li>
   </div>
+</html>
+<script>
+  const elements = document.querySelectorAll("#container");
+  
+  for (const element of elements) {
+    element.addEventListener('wheel', (event) => 
+    {
+      if (event.screenY > 200 && event.screenY < 700) {
+        event.preventDefault();
+        element.scrollBy({ left: event.deltaY < 0 ? -100 : 100, });
+      }
+    });
+  }
+      </script>
