@@ -1,0 +1,46 @@
+<html>
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio</title>
+  </head>
+<h1>Portfolio</h1>
+
+<p align = "center"><iframe width="347" height="618" src="https://www.youtube.com/embed/vg85905rZy4?autoplay=1"  title="Materiality" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</p>
+<p align="center"><video loop width="1475" height="384" autoplay muted align=>
+    <source src="./projects/data/rolling_title.mp4" type="video/mp4">
+  </video>
+ </p>
+  <p align="center"><video loop width="1475" height="384" autoplay muted align=>
+    <source src="./projects/data/typeface.mp4" type="video/mp4">
+  </video> </p>
+  
+  <p align="center"><img src="./projects/data/bunnies.png" alt="" width = "1500" height="850"></p>
+  <p align="center"><iframe width="620" height="430" src="https://player.vimeo.com/video/768271793?h=bcaa203e12&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+  <p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/fTeUhSzwgEU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+<p align="center"><iframe width="560" height="315" src="https://www.youtube.com/embed/xi4ET5y7ks8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></p>
+
+  <div id = "container">
+    <li class="item">  <img src="./projects/data/skylar.jpg" alt="skylar.jpg"> </li>
+    <li class="item">  <img src="./projects/data/hand1.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./projects/data/hand2.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./projects/data/kira.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./projects/data/sharkbass.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./projects/data/alex.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./projects/data/hand3.jpg" alt="kira.jpg">    </li>
+    <li class="item">  <img src="./projects/data/alex2.jpg" alt="kira.jpg">    </li>
+  </div>
+  </html>
+  <script>
+    const elements = document.querySelectorAll("#container");
+    
+    for (const element of elements) {
+      element.addEventListener('wheel', (event) => 
+      {
+        if (event.screenY > 200 && event.screenY < 700) {
+          event.preventDefault();
+          element.scrollBy({ left: event.deltaY < 0 ? -100 : 100, });
+        }
+      });
+    }
+        </script>
