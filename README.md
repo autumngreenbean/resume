@@ -1,3 +1,3 @@
 # Resume Website
 
-This is a resume website for Autumn Green.
+This is the framework of a website with a 3D renderer using three.js
