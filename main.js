@@ -1,63 +1,56 @@
 import './style.css'
-import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls'
 import * as THREE from 'three';
 
-
 const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1,1000);
 
-const camera = new THREE.PerspectiveCamera(75,window.innerWidth/window.innerHeight, 0.1,1000);
-
-const renderer = new THREE.WebGLRenderer({
+const renderer = new THREE.WebGL1Renderer({
 canvas: document.querySelector('#bg'),
+  
 })
 
 renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(window.innerWidth,window.innerHeight);
 camera.position.setZ(30);
 
 renderer.render(scene,camera);
 
 const geometry = new THREE.TorusGeometry(10,3,16,100);
-const material = new THREE.MeshStandardMaterial({color: 0xFF6347, wireframe: true, wireframeLinewidth: .5});
+const material = new THREE.MeshBasicMaterial({color:0xFF6347, wireframe:true});
 const torus = new THREE.Mesh(geometry, material);
+
+const torus2 = new THREE.Mesh(geometry, material);
+
+torus.position.z = 30;
+torus.position.setX(-10);
 scene.add(torus);
 
-const pointLight = new THREE.PointLight(0xffffff);
-pointLight.position.set(5,5,5);
+torus2.position.z = 10;
+torus2.position.setX(-10);
+scene.add(torus2);
 
-const lightHelper = new THREE.PointLightHelper(pointLight);
-const gridHelper = new THREE.GridHelper(200,50);
-scene.add(gridHelper);
-scene.add(lightHelper);
+function moveCamera() {
+  const t = document.body.getBoundingClientRect().top;
+  torus2.rotation.x += 0.05;
+  torus2.rotation.y += 0.0075;
+  torus2.rotation.z += 0.005;
 
-scene.add(pointLight);
+// camera.position.z = t * -0.00001;
+  camera.position.x = t * 0.0002;
+  camera.rotation.y = t * -0.0002;
 
-const controls = new OrbitControls(camera, renderer.domElement);
-
-function addStar() {
-  const geometry = new THREE.SphereGeometry(0.25,24,24);
-  const material = new THREE.MeshStandardMaterial({color: 0xffffff})
-  const star = new THREE.Mesh(geometry,material);
-
-  const[x,y,z] = Array(3).fill().map(() => THREE.MathUtils.randFloatSpread(100));
-  star.position.set(x,y,z);
-  scene.add(star);
 }
 
-Array(200).fill().forEach(addStar);
-
-const spaceTexture = new THREE.TextureLoader().load('fleshScape.png');
-scene.background = spaceTexture;
+document.body.onscroll = moveCamera
 
 function animate() {
   requestAnimationFrame(animate);
-  renderer.render(scene,camera);
-  torus.rotation.x +=0.01;
-  torus.rotation.y += 0.005;
-  torus.rotation.z += 0.005;
-  controls.update();
 
+  torus.rotation.x += 0.005;
+  torus.rotation.y += 0.0005;
+  torus.rotation.z += 0.01;
   renderer.render(scene,camera);
+
 }
 
 animate();
